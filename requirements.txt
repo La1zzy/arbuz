@@ -3,5 +3,4 @@ psycopg2==2.9.9
 gunicorn==21.2.0
 flask_sqlalchemy
 flask_jwt_extended
-python-time
-random2
+python-dotenv
