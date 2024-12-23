@@ -3,9 +3,13 @@ services:
     name: flask-library-api
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn wsgi:app
+    startCommand: gunicorn wsgi:app --bind 0.0.0.0:$PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.0
       - key: DATABASE_URL
         value: postgresql://avnadmin:AVNS_qSY-E_GGG1SESLMzcOv@pg-39cec8a9-istu-7a4b.k.aivencloud.com:25134/defaultdb?sslmode=require
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_APP
+        value: wsgi.py
